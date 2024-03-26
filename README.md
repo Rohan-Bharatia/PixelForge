@@ -18,6 +18,6 @@ Progematic's hippo game engine GitHub repo: [text](https://github.com/progremati
     ```nano ~/.bashrc```
 5. Once on the new page, go to the alias definition section of the document (near the bottom)
 6. Under the comments, add the lines:
-    ```if[ ~f ~/.bash_aliases ]; then```
-    ```    . ~/.bash_aliases```
+    ```if[ ~f ~/.bash_aliases ]; then\n```
+    ```    . ~/.bash_aliases\n```
     ```fi```
