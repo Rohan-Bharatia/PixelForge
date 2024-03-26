@@ -12,4 +12,3 @@ logs/
 *.vcxproj*
 *.sln
 *Makefile
-*.pyc

@@ -1,6 +1,6 @@
 # PixelForge
 PixelForge is an open source c++20 game engine with heavy inspiration from Progematic's Hippo game engine
-Progematic's hippo game engine GitHub repo: [text](https://github.com/progrematic/hippo)
+Progematic's hippo game engine GitHub repo: [https://github.com/progrematic/hippo](https://github.com/progrematic/hippo)
 
 !! WARNING - (NOT NECESSARY) !!
 !! If you want to integrate the CLI into your project, follow these steps to make it easier !!
