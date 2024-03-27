@@ -6,10 +6,11 @@
 #include <window.h>
 
 // Basic functions
-void WINAPI Window::Window(uint32_t width, uint32_t height, wchar_t name[], uint32_t fps = 120)
+void WINAPI Window::Window(uint32_t width, uint32_t height, wchar_t name[], float color, uint32_t fps = 120)
 {
     m_width = width;
     m_height = height;
+    m_color = color;
     
     // Brodcasting 'on_open()'
     open = true;
@@ -64,7 +65,7 @@ LRESULT CALLBACK Window::win_proc(HWND hwnd, uint msg, WPARAM w_param, LPARAM l_
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hwnd, &ps);
 
-            FillRect(hdc, &ps.rcPaint, (HBRUSH), (COLOR_WINDOW + 1));
+            FillRect(hdc, &ps.rcPaint, (HBRUSH), (COLOR_WINDOW + m_color));
             EndPaint(hwnd, &ps);
         }
 

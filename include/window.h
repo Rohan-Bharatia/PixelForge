@@ -10,7 +10,7 @@ public:
     uint32_t HEIGHT = m_height;
 
     // Basic functions
-    void WINAPI Window(uint32_t width, uint32_t height, wchar_t name[], uint fps = 120);
+    void WINAPI Window(uint32_t width, uint32_t height, wchar_t name[], auto color, uint fps = 120);
     void close();
     LRESULT CALLBACK win_proc(HWND hwnd, uint msg, WPARAM w_param, LPARAM l_param);
 
@@ -26,6 +26,7 @@ private:
     int show;
     uint32_t m_width;
     uint32_t m_height;
+    float m_color;
     bool open = false;
     bool close = false;
 }
