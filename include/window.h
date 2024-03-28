@@ -2,12 +2,12 @@
 
 #include <windows.h>
 
-class Window()
+class window()
 {
 public:
     // Main variables
-    uint32_t WIDTH = m_width;
-    uint32_t HEIGHT = m_height;
+    uint32_t w = m_width;
+    uint32_t h = m_height;
 
     // Basic functions
     void WINAPI Window(uint32_t width, uint32_t height, wchar_t name[]);

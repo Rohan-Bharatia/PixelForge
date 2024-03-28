@@ -6,7 +6,7 @@
 #include <window.h>
 
 // Basic functions
-void WINAPI Window::Window(uint32_t width, uint32_t height, wchar_t name[], float color, uint32_t fps = 120)
+void WINAPI window::Window(uint32_t width, uint32_t height, wchar_t name[], float color, uint32_t fps = 120)
 {
     m_width = width;
     m_height = height;
@@ -50,7 +50,7 @@ void WINAPI Window::Window(uint32_t width, uint32_t height, wchar_t name[], floa
     return;
 }
 
-LRESULT CALLBACK Window::win_proc(HWND hwnd, uint msg, WPARAM w_param, LPARAM l_param)
+LRESULT CALLBACK window::win_proc(HWND hwnd, uint msg, WPARAM w_param, LPARAM l_param)
 {
     state_info *state;
     if(msg == WM_CREATE)
@@ -89,7 +89,7 @@ LRESULT CALLBACK Window::win_proc(HWND hwnd, uint msg, WPARAM w_param, LPARAM l_
     return DefWindowProc(hwnd, msg, w_param, l_param);
 }
 
-inline state_info Window::app_state(HWND hwnd)
+inline state_info window::app_state(HWND hwnd)
 {
     LONG_PTR ptr = GetWindowLongPtr(hwnd, GWLP_USERDATA);
     state_info *m_state = reinterpret_cast<state_info*>(ptr);
@@ -98,11 +98,11 @@ inline state_info Window::app_state(HWND hwnd)
 }
 
 // Events
-bool Window::on_open()
+bool window::on_open()
 {
     return open;
 }
-bool Window::on_close()
+bool window::on_close()
 {
     return close;
 }
