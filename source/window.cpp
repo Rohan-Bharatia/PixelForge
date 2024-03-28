@@ -79,7 +79,7 @@ LRESULT CALLBACK Window::win_proc(HWND hwnd, uint msg, WPARAM w_param, LPARAM l_
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hwnd, &ps);
 
-            FillRect(hdc, &ps.rcPaint, (HBRUSH), (COLOR_WINDOW + m_color));
+            FillRect(hdc, &ps.rcPaint, (HBRUSH), (COLOR_WINDOW + 1));
             EndPaint(hwnd, &ps);
         }
 

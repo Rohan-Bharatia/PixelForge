@@ -10,8 +10,7 @@ public:
     uint32_t HEIGHT = m_height;
 
     // Basic functions
-    void WINAPI Window(uint32_t width, uint32_t height, wchar_t name[], auto color, uint fps = 120);
-    void close();
+    void WINAPI Window(uint32_t width, uint32_t height, wchar_t name[]);
 
     // Events
     bool on_open();
