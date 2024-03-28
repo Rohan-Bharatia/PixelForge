@@ -12,7 +12,6 @@ public:
     // Basic functions
     void WINAPI Window(uint32_t width, uint32_t height, wchar_t name[], auto color, uint fps = 120);
     void close();
-    LRESULT CALLBACK win_proc(HWND hwnd, uint msg, WPARAM w_param, LPARAM l_param);
 
     // Events
     bool on_open();
@@ -29,4 +28,7 @@ private:
     float m_color;
     bool open = false;
     bool close = false;
+    LRESULT CALLBACK win_proc(HWND hwnd, uint msg, WPARAM w_param, LPARAM l_param);
+    struct state_info{};
+    inline state_info app_state(HWND hwnd);
 }

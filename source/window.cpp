@@ -24,15 +24,17 @@ void WINAPI Window::Window(uint32_t width, uint32_t height, wchar_t name[], floa
 
     registerClass(&wc);
 
+    // state_info *state;
+    // if(state == NULL)
+    //     return;
+
     // Creating window
     HWND hwnd = CreateWindowEx(0, name, L"PixelForge Application", WS_OVERLAPPEDWINDOW,
                                CW_USEDEFAULT, CW_USEDEFAULT, width, height, NULL, NULL,
                                m_instance, NULL);
     
     if(hwnd == NULL)
-    {
         return;
-    }
 
     // Displaying window
     ShowWindow(hwnd, show);
@@ -50,6 +52,18 @@ void WINAPI Window::Window(uint32_t width, uint32_t height, wchar_t name[], floa
 
 LRESULT CALLBACK Window::win_proc(HWND hwnd, uint msg, WPARAM w_param, LPARAM l_param)
 {
+    state_info *state;
+    if(msg == WM_CREATE)
+    {
+        CREATESTRUCT *create = reinterpret_cast<CREATESTRUCT*>(l_param);
+        state = reinterpret_cast<state_info*>(create -> lpCreateParams);
+        SetWindowLongPtr(hwnd, GWLP_USERDATA, (LONG_PTR)state);
+    }
+    else
+    {
+        state = app_state(hwnd);
+    }
+
     switch(msg)
     {
     case WM_DESTROY:
@@ -73,6 +87,14 @@ LRESULT CALLBACK Window::win_proc(HWND hwnd, uint msg, WPARAM w_param, LPARAM l_
     }
 
     return DefWindowProc(hwnd, msg, w_param, l_param);
+}
+
+inline state_info Window::app_state(HWND hwnd)
+{
+    LONG_PTR ptr = GetWindowLongPtr(hwnd, GWLP_USERDATA);
+    state_info *m_state = reinterpret_cast<state_info*>(ptr);
+
+    return m_state;
 }
 
 // Events
