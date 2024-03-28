@@ -1,7 +1,3 @@
-#ifndef UNICODE
-#define UNICODE
-#endif
-
 #include "include/window.h"
 #include <window.h>
 #include <d2d1.h>

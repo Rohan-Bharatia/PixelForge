@@ -1,13 +1,22 @@
+#ifndef UNICODE
+#define UNICODE
+#endif
+
 #include "include/window.h"
 #include "include/graphics.h"
 #include "include/color.h"
+#include "include/transformations.h"
 #include "COM.cpp"
+#include "DPI.cpp"
 using namespace PixelForge;
 using namespace Color;
 using namespace Draw;
 
 #define WIDTH PixelForge::Window::w;
 #define HEIGHT PixelForge::Window::h;
+
+#define X_DIRECTION true
+#define Y_DIRECTION true
 
 #define WHITE rgba(255, 255, 255, 1.0)
 #define BLACK rgba(0, 0, 0, 1.0)
@@ -30,4 +39,5 @@ namespace PixelForge
     class Window : public window;
     class Graphics : public graphics;
     class Color : public color;
+    class Transform : public transform;
 }

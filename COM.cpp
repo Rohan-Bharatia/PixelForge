@@ -1,3 +1,5 @@
+#pragma once
+
 #include <windows.h>
 #include <shobjidl.h>
 #include <atlbase.h>
