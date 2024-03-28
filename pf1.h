@@ -1,6 +1,10 @@
 #include "include/window.h"
 #include "include/graphics.h"
+#include "include/color.h"
 #include "COM.cpp"
+using namespace PixelForge;
+using namespace Color;
+using namespace Draw;
 
 #define WIDTH PixelForge::Window::w;
 #define HEIGHT PixelForge::Window::h;
@@ -25,4 +29,5 @@ namespace PixelForge
 {
     class Window : public window;
     class Graphics : public graphics;
+    class Color : public color;
 }
