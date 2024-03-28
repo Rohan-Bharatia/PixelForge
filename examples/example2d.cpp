@@ -6,7 +6,7 @@ using namespace Draw;
 
 int main()
 {
-    Window window(640, 480, L"2D Graphics Example");
+    Window window(640, 480, L"2D Graphics Example", rgba(0, 0, 0, 1.0));
 
     vec2 a = vec2(0, HEIGHT);
     vec2 b = vec2(WIDTH / 2, 0);

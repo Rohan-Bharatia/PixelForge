@@ -1,8 +1,9 @@
 #pragma once
 
+#include "graphics.h"
 #include <windows.h>
 
-class window()
+class window : private graphics
 {
 public:
     // Main variables
@@ -10,7 +11,7 @@ public:
     uint32_t h = m_height;
 
     // Basic functions
-    void WINAPI Window(uint32_t width, uint32_t height, wchar_t name[]);
+    void WINAPI Window(uint32_t width, uint32_t height, wchar_t name[], Color col);
 
     // Events
     bool on_open();
@@ -30,4 +31,5 @@ private:
     LRESULT CALLBACK win_proc(HWND hwnd, uint msg, WPARAM w_param, LPARAM l_param);
     struct state_info{};
     inline state_info app_state(HWND hwnd);
+    Color m_col;
 }

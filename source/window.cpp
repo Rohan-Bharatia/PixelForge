@@ -4,19 +4,18 @@
 
 #include "include/window.h"
 #include <window.h>
+#include <d2d1.h>
 
 // Basic functions
-void WINAPI window::Window(uint32_t width, uint32_t height, wchar_t name[], float color, uint32_t fps = 120)
+void WINAPI window::Window(uint32_t width, uint32_t height, wchar_t name[], Color col)
 {
     m_width = width;
     m_height = height;
-    m_color = color;
+    m_col = col;
     
-    // Brodcasting 'on_open()'
     open = true;
     close = false;
 
-    // Register window class
     WNDCLASS wc = {};
     wc.lpfnWndProc = win_proc;
     wc.hInstance = instance;
@@ -28,7 +27,6 @@ void WINAPI window::Window(uint32_t width, uint32_t height, wchar_t name[], floa
     // if(state == NULL)
     //     return;
 
-    // Creating window
     HWND hwnd = CreateWindowEx(0, name, L"PixelForge Application", WS_OVERLAPPEDWINDOW,
                                CW_USEDEFAULT, CW_USEDEFAULT, width, height, NULL, NULL,
                                m_instance, NULL);
@@ -36,7 +34,6 @@ void WINAPI window::Window(uint32_t width, uint32_t height, wchar_t name[], floa
     if(hwnd == NULL)
         return;
 
-    // Displaying window
     ShowWindow(hwnd, show);
 
     MSG msg = {};
@@ -66,8 +63,15 @@ LRESULT CALLBACK window::win_proc(HWND hwnd, uint msg, WPARAM w_param, LPARAM l_
 
     switch(msg)
     {
+    case WM_CREATE:
+        if(D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, &factory))
+        {
+            return;
+        }
+
+        return;
+
     case WM_DESTROY:
-        // Brodcasting 'on_close()'
         close = true;
         open = false;
         
@@ -75,12 +79,25 @@ LRESULT CALLBACK window::win_proc(HWND hwnd, uint msg, WPARAM w_param, LPARAM l_
         return;
     
     case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hwnd, &ps);
+        HRESULT hr2;
+        PAINTSTRUCT ps;
 
-            FillRect(hdc, &ps.rcPaint, (HBRUSH), (COLOR_WINDOW + 1));
-            EndPaint(hwnd, &ps);
+        if(SUCCEEDED(hr))
+        {    
+            BeginPaint(m_hwnd, &ps);
+
+            render_target -> BeginPaint();
+            render_target -> Clear(ColorF(TRANSPARENT));
+            render_target -> FillTriangle(tri, brush);
+            hr2 = render_target -> EndDraw();
+
+            if(FAILED(hr2) || hr == D2DERR_RECREATE_TARGET)
+            {
+                safe_release(&render_target);
+                safe_release(&brush);
+            }
+
+            EndPaint(m_hwnd, &ps);
         }
 
         return;
