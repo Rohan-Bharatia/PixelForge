@@ -1,0 +1,26 @@
+name: Windows Build
+
+on:
+  push:
+    branches:
+      - main
+  pull-request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Configure CMake
+        run: cmake -S . -B build "Visual Studio 16 2019" -A x64
+      
+      - name: Build
+        run: cmake --build build --config Release
+      
+      - name: Test
+        run: cd build && ctest -C Release

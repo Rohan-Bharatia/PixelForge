@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "configurePresets":[
+      {
+        "name": "dev",
+        "binaryDir": "build",
+        "installDir": "${sourceDir}/build/install",
+        "cacheVariables": {
+          "CMAKE_CXX_EXTENSIONS": "OFF",
+          "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+          "PixelForge_BUILD_EXAMPLES": "ON",
+          "PixelForge_BUILD_TEST_SUITE": "ON",
+          "PixelForge_WARNINGS_AS_ERRORS": "ON"
+        }
+      }
+    ]
+  }
