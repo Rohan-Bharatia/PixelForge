@@ -59,23 +59,23 @@ Cpp11BracedListStyle: true
 # Braces
 BreakBeforeBraces: Custom
 BraceWrapping:
-    AfterCaseLabel: true
-    AfterClass: true
-    AfterControlStatement: Always
-    AfterEnum: true
-    AfterFunction: true
-    AfterNamespace: true
-    AfterStruct: true
-    AfterUnion: true
-    AfterExternBlock: true
-    BeforeCatch: false
-    BeforeElse: true
-    BeforeLambdaBody: true
-    BeforeWhile: false
-    IndentBraces: false
-    SplitEmptyFunction: true
-    SplitEmptyRecord: true
-    SplitEmptyNamespace: true
+  AfterCaseLabel: true
+  AfterClass: true
+  AfterControlStatement: Always
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct: true
+  AfterUnion: true
+  AfterExternBlock: true
+  BeforeCatch: false
+  BeforeElse: true
+  BeforeLambdaBody: true
+  BeforeWhile: false
+  IndentBraces: false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
 
 # Namespaces
 CompactNamespaces: false
@@ -142,7 +142,7 @@ Language: ObjC
 IndentWidth: 4
 BreakBeforeBraces: Custom
 BraceWrapping:
-    AfterObjCDeclaration: true
+  AfterObjCDeclaration: true
 
 ObjCBinPackProtocolList: Never
 ObjCBlockIndentWidth: 4
