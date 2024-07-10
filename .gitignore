@@ -1,8 +1,7 @@
 .cache/
 .idea/
-# .vs/
-# .vscode/
+.vs/
+.vscode/
 build/
 cmake-build-*/
 CMakeUserPresets.json
-tests/
