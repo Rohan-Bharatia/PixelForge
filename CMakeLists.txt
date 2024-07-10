@@ -15,7 +15,6 @@ add_executable(HYDRAlib ${BIN})
 set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/toolchain.cmake")
 
 find_package(PKG_CONFIG REQUIRED)
-pkg_check_modules(PROS REQUIRED pros)
 
 add_definitions(-D_GNU_SOURCE)
 
