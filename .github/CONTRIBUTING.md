@@ -83,7 +83,7 @@ npm start
  - Use [snake case](https://www.freecodecamp.org/news/snake-case-vs-camel-case-vs-pascal-case-vs-kebab-case-whats-the-difference/#snake-case) for variable and function names.
  - Use [pascal case](https://www.freecodecamp.org/news/snake-case-vs-camel-case-vs-pascal-case-vs-kebab-case-whats-the-difference/#pascal-case) for class names.
  - Never use [camel case](https://www.freecodecamp.org/news/snake-case-vs-camel-case-vs-pascal-case-vs-kebab-case-whats-the-difference/#camel-case)
- - Use 4 spaces for indentation in all files except for ```.yml``` or ```.yaml``` files, in that case use 2 spaces as seen in [.editorconfig](https://github.com/Rohan-Bharatia/PixelForge/blob/main/.editorconfig).
+ - Use 4 spaces for indentation in all files except for ```.yml```, ```.yaml```, ```.clang-...```, ```.git...```, or ```.editorconfig``` files, in that case use 2 spaces as seen in [.editorconfig](https://github.com/Rohan-Bharatia/PixelForge/blob/main/.editorconfig).
  - Write clear and consise code.
 
 ## Licensing
