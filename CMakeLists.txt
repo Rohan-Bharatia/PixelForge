@@ -7,7 +7,7 @@ project(PixelForge VERSION 1.0.0 LANGUAGES C CXX CUDA)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-file(GLOB_RECURSE SOURCES src/*.cpp)
+file(GLOB_RECURSE SOURCES src/*.cpp, src/*.inl)
 file(GLOB BIN "*.a")
 
 add_executable(HYDRAlib ${BIN})
